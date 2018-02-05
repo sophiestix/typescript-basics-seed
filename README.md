@@ -79,3 +79,38 @@ further about to dive deeper or understand in more detail what they are:
 * [TypeScript Docs](https://www.typescriptlang.org)
 * [TypeScript Playground](https://www.typescriptlang.org/play)
 * [AST Explorer](https://astexplorer.net)
+
+# Notes
+
+```
+tsc -version
+```
+
+```
+tsc --init
+```
+This creates a `tsconfig.json` file, where we can delete all the commented-out lines to keep it neat.
+
+In the terminal, to compile typescript according to the `<script>` in the `index.html`:
+```
+tsc --outDir dist
+```
+
+OR
+
+in the `tsconfig.json` file add 
+```
+"outDir": "dist"
+```
+and then just run
+```
+tsc
+```
+
+To set up watch mode:
+```
+tsc -w
+```
+
+
+
