@@ -82,6 +82,8 @@ further about to dive deeper or understand in more detail what they are:
 
 # Notes
 
+## Installing Typescript / TypeScript compiler (tsc) and tsconfig
+
 ```
 tsc -version
 ```
@@ -98,7 +100,7 @@ tsc --outDir dist
 
 OR
 
-in the `tsconfig.json` file add 
+in the `tsconfig.json` file add
 ```
 "outDir": "dist"
 ```
@@ -112,5 +114,18 @@ To set up watch mode:
 tsc -w
 ```
 
+## Setting up Webpack for TypeScript
 
+Create a `webpack.config.js` file.
 
+Then install devDependencies
+```
+yarn install
+```
+```
+yarn start
+```
+
+With webpack we dont really need a `dist` folder because webpack will virtually use the output we
+defined in the `output` in the config file. So we won't need to have the `./dist` in the `dist/app/js`
+in the `<script>` tag in `index/html` anymore.
