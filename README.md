@@ -451,5 +451,25 @@ function orderError(error: string): never {
 orderError('Something went wrong');
 ```
 
+### Null, Undefined, Strick Null checks
+
+In the `tsconfig.json` file, you can override the `strict: true` with `strictNullCheck: true` to be able to reassign `null` in to a for ex `:string` type variable:
+```
+let coupon: string = 'pizza25';
+
+function removeCoupon(): void {
+    coupon = null;
+}
+
+console.log(coupon);
+removeCoupon();
+console.log(coupon);
+```
+
+Other workaround can be to use the `|` to add it to the type:
+```
+let coupon: string | null = 'pizza25';
+```
+
 
 

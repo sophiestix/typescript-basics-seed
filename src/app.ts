@@ -1,8 +1,12 @@
-function orderError(error: string): never {
-    throw new Error(error);
-    // never going to return a value!
+let coupon: string | null = 'pizza25';
+
+function removeCoupon(): void {
+    coupon = null;
 }
 
-orderError('Something went wrong');
+console.log(coupon);
 
-// there is some unreachable code in the applocation
+removeCoupon();
+
+console.log(coupon);
+
