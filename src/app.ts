@@ -1,11 +1,10 @@
-const pizzas: number = 5;
+let coupon;
 
-function offerDiscount(orders: number): boolean {
-    return orders >= 3;
-}
+coupon = 25;
 
-if (offerDiscount(pizzas)) {
-    console.log(`You're entitled to a discount!`);
-} else {
-    console.log(`Order more than 3 pizzas for a discount!`);
-}
+coupon = 'pizza25';
+
+coupon = true;
+
+// reasons to use they any type is e.g. when you migrate an old javascript application into typescript
+// and don't want to dive into the very details yet
