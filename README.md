@@ -399,6 +399,8 @@ if (offerDiscount(pizzas)) {
 
 ## Special Types
 
+### Any Type
+
 If we don't supply a type for a variable, it will turn to `any` by default. It won't change even if we assign a number to the variable, like here:
 
 ```
@@ -409,4 +411,12 @@ coupon = true; // type is still any
 ```
 One reason to use they any type is e.g. when you migrate an old javascript application into typescript
 and don't want to dive into the very details yet.
+
+### Implicit vs Explicit Types
+
+The diff is whether we let typescript to assume a type or excplicitly state the type upfront.
+```
+let implicitCoupon = 'pizza25'; // typescript assumes it is a string
+let explicitCoupon: string = 'pizza25';
+```
 
