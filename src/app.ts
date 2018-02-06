@@ -1,29 +1,14 @@
-function sumAll(arr) {
-    return arr.reduce((prev, next) => prev + next);
-}
+const toppings = ['bacon', 'chili'];
 
-const sum = sumAll([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+const newToppings = ['pepperoni'];
 
-console.log(sum);
+// The Spread operator creates a copy into a single array. It doesn't keep the reference, it just copies the array
+const allToppings = [...toppings, ...newToppings];
 
+console.log(allToppings);
 
-// What if we have an indefinite amount of arguments
+// easy to modify the order too:
+const allToppings2 = [...newToppings, ...toppings];
 
-function sumAll2(message, ...arr) {
-    console.log(message);
-    return arr.reduce((prev, next) => prev + next);
-}
+console.log(allToppings2);
 
-const sum2 = sumAll2('Hello!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-console.log(sum2);
-
-// So we don't have to use the 'arguments' parameter with indexes anymore:
-function sumAll3(message, ...arr) {
-    console.log(arguments[0]);
-    return arr.reduce((prev, next) => prev + next);
-}
-
-const sum3 = sumAll3('Hello!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-console.log(sum3);

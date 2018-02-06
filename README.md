@@ -236,3 +236,33 @@ const sum2 = sumAll2('Hello!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 console.log(sum2);
 ```
 
+### Array and Object Spreads
+
+```
+const toppings = ['bacon', 'chili'];
+const newToppings = ['pepperoni'];
+```
+
+The Spread operator creates a copy into a single array. It doesn't keep the reference, it just copies the array
+```
+const allToppings = [...toppings, ...newToppings];
+console.log(allToppings);
+
+----
+zsofias-mbp:typescript-basics-seed zsofiahelmeczi$ node dist/app.js
+[ 'bacon', 'chili', 'pepperoni' ]
+```
+
+It's easy to modify the order too:
+```
+const allToppings2 = [...newToppings, ...toppings];
+console.log(allToppings2);
+
+----
+zsofias-mbp:typescript-basics-seed zsofiahelmeczi$ node dist/app.js
+[ 'bacon', 'chili', 'pepperoni' ]
+[ 'pepperoni', 'bacon', 'chili' ]
+```
+
+
+
