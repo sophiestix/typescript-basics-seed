@@ -264,5 +264,76 @@ zsofias-mbp:typescript-basics-seed zsofiahelmeczi$ node dist/app.js
 [ 'pepperoni', 'bacon', 'chili' ]
 ```
 
+### Destructuring Objects
+
+To pluck out things from objects we don't need
+
+Base:
+```
+const pizza = {
+    name: 'Pepperoni',
+    toppings: ['pepperoni'],
+};
+
+function order(abc) {}
+
+order(pizza);
+```
+
+Now after restructuring, we create an object literal structure around it when passing into a function, and it creates properties and plus as variable names as well
+```
+const pizza2 = {
+    name: 'Pepperoni',
+    toppings: ['pepperoni'],
+};
+
+function order2({ name, toppings }) {
+    console.log(name, toppings);
+}
+
+order2(pizza2);
+```
+
+We can also rename the properties when passign them into a function
+```
+function order3({ name: pizzaName, toppings: pizzaToppings }){
+    console.log(pizzaName, pizzaToppings);
+};
+
+order3(pizza2);
+```
+
+We can return a new object with the new properties. we are asking for a property from an object and create a variable:
+```
+function order4({ name: pizzaName, toppings: pizzaToppings }){
+    return { pizzaName, pizzaToppings };
+};
+
+const { pizzaName } = order4(pizza2);
+```
+
+Destructure an array
+```
+const toppings = ['pepperoni', 'bacon', 'chili'];
+```
+Originally to get the first item for example:
+```
+const firstItem = toppings[0];
+```
+
+Now:
+```
+const [ first, second, third ] = toppings; // doesn't matter what you call them though, can be [a,b,c]
+console.log(first, second, third); // this will show three independent string values, not an array in [] brackets
+```
+
+Desctructure an array when passing into a function
+```
+function logToppings([ first, second, third ]: any) {
+    console.log(first, second, third);
+};
+
+logToppings(toppings);
+```
 
 
