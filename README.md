@@ -422,7 +422,7 @@ let explicitCoupon: string = 'pizza25';
 
 ### Void Type
 
-Kinda the opposite of any, it is great for functions. In cases when the function for ex doesn't return
+Kinda the opposite of `any`, it is great for functions. In cases when the function for ex doesn't return
 anything, but rather will be reused later.
 
 ```
@@ -436,4 +436,20 @@ selectTopping('bacon');
 
 console.log(selectedTopping);
 ```
+
+### Never Type
+
+Telling the tsc that the value will never occure. When the return type never actually returns something
+or for ex an error will be thrown, which means that we will never continue down with that particular code.
+
+```
+function orderError(error: string): never {
+    throw new Error(error);
+    // never going to return a value!
+}
+
+orderError('Something went wrong');
+```
+
+
 

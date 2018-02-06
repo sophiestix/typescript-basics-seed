@@ -1,9 +1,8 @@
-let selectedTopping: string = 'pepperoni';
-
-function selectTopping(topping: string): void {
-    selectedTopping = topping;
+function orderError(error: string): never {
+    throw new Error(error);
+    // never going to return a value!
 }
 
-selectTopping('bacon');
+orderError('Something went wrong');
 
-console.log(selectedTopping);
+// there is some unreachable code in the applocation
