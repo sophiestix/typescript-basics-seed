@@ -5,13 +5,15 @@ module.exports = {
         path: __dirname + "./dist"
     },
     resolve: {
-        extensions: [".ts", "js"]
+        extensions: [".ts", ".js"]
     },
     module: {
-        rules: [{
-            test: /\.ts$/,
-            use: "awesome-typescript-loader"
-        }]
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "awesome-typescript-loader"
+            }
+        ]
     },
     devServer: {
         port: 3000
