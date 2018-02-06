@@ -1,2 +1,9 @@
-let implicitCoupon = 'pizza25'; // typescript assumes it is a string
-let explicitCoupon: string = 'pizza25';
+let selectedTopping: string = 'pepperoni';
+
+function selectTopping(topping: string): void {
+    selectedTopping = topping;
+}
+
+selectTopping('bacon');
+
+console.log(selectedTopping);

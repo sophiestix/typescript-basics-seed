@@ -420,3 +420,20 @@ let implicitCoupon = 'pizza25'; // typescript assumes it is a string
 let explicitCoupon: string = 'pizza25';
 ```
 
+### Void Type
+
+Kinda the opposite of any, it is great for functions. In cases when the function for ex doesn't return
+anything, but rather will be reused later.
+
+```
+let selectedTopping: string = 'pepperoni';
+
+function selectTopping(topping: string): void {
+    selectedTopping = topping;
+}
+
+selectTopping('bacon');
+
+console.log(selectedTopping);
+```
+
