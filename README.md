@@ -336,4 +336,33 @@ function logToppings([ first, second, third ]: any) {
 logToppings(toppings);
 ```
 
+## Primitive Types
+
+### Number Type
+
+Don't mistake it with the uppercase javascript types like `new Number();`.
+
+Typescript keeps track of types, e.g. it would indicate that the string is not the expected number type in this case:
+```
+let pizzaCost = 10;
+pizzaCost = '25';
+```
+
+You can set it already here:
+```
+let pizzaCost: number = 10;
+```
+
+```
+const pizzaCost: number = 10;
+const pizzaToppings: number = 2;
+
+function calculatePrice(cost: number, toppings: number): number {
+    return cost + 1.5 * toppings;
+};
+
+const cost: number = calculatePrice(pizzaCost,pizzaToppings);
+console.log(`Pizza costs: ${cost}`);
+```
+
 
