@@ -179,4 +179,46 @@ console.log(multiply2(5));
 console.log(multiply2(5, 35));
 ```
 
+### Object literal improvements
+
+Turn the classic
+```
+const pizza = {
+     name: "Pepperoni",
+     price: 15,
+     getName: function() {
+         return this.name;
+     }
+};
+```
+into:
+```
+const pizza = {
+    name: "Pepperoni",
+    price: 15,
+    getName() {
+        return this.name;
+    }
+};
+
+console.log(pizza.getName());
+```
+
+Creating a new object based on another object
+```
+const toppings = ["pepperoni"];
+
+const order = { pizza, toppings };
+
+console.log(order);
+```
+
+Move the order into a function
+```
+function createOrder() {
+    return { pizza, toppings};
+}
+
+console.log(createOrder(pizza, toppings));
+```
 
