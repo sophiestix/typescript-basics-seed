@@ -222,3 +222,17 @@ function createOrder() {
 console.log(createOrder(pizza, toppings));
 ```
 
+### Rest Parameters
+
+What if we have an indefinite amount of arguments
+```
+function sumAll2(message, ...arr) {
+    console.log(message);
+    return arr.reduce((prev, next) => prev + next);
+}
+
+const sum2 = sumAll2('Hello!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+console.log(sum2);
+```
+
