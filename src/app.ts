@@ -1,71 +1,17 @@
-const pizzas = [{ name: "Pepperoni", toppings: ["pepperoni"] }];
+function multiply(a, b) {
+    return a * b;
+}
 
-// arrow functions
+console.log(multiply(5, 25));
 
-const mappedPizzas = pizzas.map(pizza => {
-    return pizza.name.toUpperCase();
-});
+// Adding defaults
 
-console.log(mappedPizzas);
+function multiply2 (a, b = 25) {
+    return a * b;
+}
 
-// implicit returns
-const implicitPizzas = pizzas.map(pizza => pizza.name.toUpperCase());
+console.log(multiply2(5));
 
-console.log(implicitPizzas);
+// override the default
 
-// --------- example 1
-
-const pizza = {
-    name: "Blazing Inferno",
-    getName: function() {
-        console.log(this); // this returns: {name: "Blazing Inferno", getName: ƒ}
-    }
-};
-
-console.log(pizza.getName());
-
-// --------- example 2
-
-// const pizza2 = {
-//     name: "Blazing Inferno",
-//     getName: function() {
-//         setTimeout(function() {
-//             console.log(this); // now 'this' is connected to the setTimeout and not the pizza2. Scope!!!
-//         }, 100);
-//     }
-// };
-
-// --------- example 3
-
-// But with arrow functions, it will work:
-
-const pizza3 = {
-    name: "Blazing Inferno",
-    getName: function() {
-        setTimeout(() => {
-            console.log(this.name); // now 'this' will return the pizza3, "inherits" the scope
-        }, 100);
-    },
-};
-
-console.log(pizza3.getName());
-
-// --------- example 4
-
-const pizza4 = {
-    name: "Blazing Inferno",
-    getName: () => pizza.name,
-};
-
-console.log(pizza4.getName());
-
-// --------- example 5
-
-const pizza5 = {
-    name: "Blazing Inferno",
-    getName: function () {
-        console.log(this.name);
-    },
-};
-
-console.log(pizza5.getName());
+console.log(multiply2(5, 35));
