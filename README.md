@@ -552,4 +552,29 @@ let pizza: {name: string; price: number; getName(): string} = {
 console.log(pizza.getName());
 ```
 
+### Array Types and Generics
+
+Implied string array
+```
+const sizes = ['small', 'medium', 'large'];
+```
+
+Explicit string  or number array
+```
+let sizes2: string[];
+sizes2 = ['small', 'medium', 'large'];
+
+let numbers: number[];
+numbers = [1, 2, 3];
+```
+
+Generic Types
+```
+// let toppings: string[];
+// new Array();
+let toppings: Array<string>; //generic types
+
+toppings = ['pepperoni', 'tomato', 'bacon'];
+```
+
 

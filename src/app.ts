@@ -1,16 +1,16 @@
-// let pizza: {name: string, price: number};
+const sizes = ['small', 'medium', 'large']; //implied string array
 
-// pizza = {
-//     name: 'Plain Old Pepperoni',
-//     price: 20,
-// };
+let sizes2: string[];
 
-let pizza: {name: string; price: number; getName(): string} = {
-    name: 'Plain Old Pepperoni',
-    price: 20,
-    getName() {
-        return pizza.name;
-    }
-};
+sizes2 = ['small', 'medium', 'large'];
 
-console.log(pizza.getName());
+let numbers: number[];
+
+numbers = [1, 2, 3];
+
+// let toppings: string[];
+let toppings: Array<string>; //generic types
+
+toppings = ['pepperoni', 'tomato', 'bacon'];
+
+new Array();
