@@ -1,11 +1,17 @@
-let PizzaSize: string = 'small';
+// function sumOrder(price: number, quantity: number): number {
+//     return price * quantity;
+// }
 
-function selectSize(size: 'small' | 'medium' | 'large'): void {
-    PizzaSize = size;
-}
 
-selectSize('meduim'); // it will underline it when misspelled or not matching the de suggestions above
+// let sumOrder: Function;
+let sumOrder: (price: number, quantity: number) => number;
 
-selectSize('medium');
+// sumOrder = (price: number, quantity: number): number => {
+//     return price * quantity;
+// }
 
-console.log(`Pizza size: ${PizzaSize}`);
+sumOrder = (x, y) => x * y;
+
+const sum = sumOrder(25, 2);
+
+console.log(`Total sum: ${sum}`);
