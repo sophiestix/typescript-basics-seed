@@ -1,24 +1,35 @@
-// let PizzaSize: 'small' | 'medium' | 'large' = 'small';
+type Pizza = { name: string, toppings: number };
 
-// const selectSize = (size: 'small' | 'medium' | 'large') => {
-//     PizzaSize = size;
-// };
+const pizza: Pizza = { name: 'BLazing Inferno', toppings: 5 };
 
-// selectSize('small');
+// pass this object into a json string then pass it back into a JS object
+// tell TS when we convert this string back into a JS object, that it will indeed be a Pizza object
 
-//But this is very repetiticve, so:
+const serialized = JSON.stringify(pizza);
 
-type Size = 'small' | 'medium' | 'large'; // you can export it and use it in other files too
-type Callback = (size: Size) => void;
+// in this case the parse is using the type :any, and the autocomplete doesn't offer name and toppings
+// when typing after the .
 
-let PizzaSize: Size = 'small';
+// function getNameFromJSON(obj: string): Pizza {
+//     return JSON.parse(obj).name;
+// }
 
-// const selectSize = (size: Size) => {
-//     PizzaSize = size;
-// };
+// getNameFromJSON(serialized);
 
-const selectSize: Callback = (x) => {
-    PizzaSize = x;
-};
+// ----- Solutions:
+// old way of doing things, but this can be confused with JSX
 
-selectSize('medium');
+// function getNameFromJSON(obj: string) {
+//     return (<Pizza>JSON.parse(obj)).name;
+// }
+
+// getNameFromJSON(serialized);
+
+
+// preferred way of doing it:
+
+function getNameFromJSON(obj: string) {
+    return (JSON.parse(obj) as Pizza ).name;
+}
+
+getNameFromJSON(serialized);

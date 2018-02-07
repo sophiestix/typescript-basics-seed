@@ -601,7 +601,7 @@ const selectSize = (size: 'small' | 'medium' | 'large') => {
 selectSize('small');
 ```
 
-But this is very repetiticve, so:
+But this is very repetitive, so:
 ```
 type Size = 'small' | 'medium' | 'large'; // you can export it and use it in other files too
 type Callback = (size: Size) => void;
@@ -629,4 +629,23 @@ const selectSize: Callback = (x) => {
 selectSize('medium');
 ```
 
+### Type Assertions
+
+We instruct TS about that we know more about the types that would potentially would be coming back from a dataset or function call.
+
+For example, pass an object into a json string then pass it back into a JS object.
+Tell TS when we convert this string back into a JS object, that it will indeed be a Pizza object
+
+```
+type Pizza = { name: string, toppings: number };
+const pizza: Pizza = { name: 'BLazing Inferno', toppings: 5 };
+
+const serialized = JSON.stringify(pizza);
+
+function getNameFromJSON(obj: string) {
+    return (JSON.parse(obj) as Pizza ).name;
+}
+
+getNameFromJSON(serialized);
+```
 
