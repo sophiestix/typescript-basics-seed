@@ -1,27 +1,35 @@
-// by default we get numeric values from enums
+// enum Sizes {
+//     Small = 'small',    // Sizes["Small"] = "small"; => simple JS key=value pair
+//     Medium = 'medium',
+//     Large = 'large'
+// }
 
-enum Sizes {
-    Small,      // Sizes[Sizes["Small"] = 0] = "Small";
-    Medium,     // Sizes[Sizes["Medium"] = 1] = "Medium";
-    Large       // Sizes[Sizes["Large"] = 2] = "Large";
+// let selected: Sizes = Sizes.Small;
+
+// function updateSize(size: Sizes): void {
+//     selected = size;
+// }
+
+// updateSize(Sizes.Large);
+
+// console.log(selected);
+
+
+// Inline Member => by adding "const" in front, we will just get the inline values, makes the compiled
+// JS shorter and neater -> inlining the enum members
+
+const enum Sizes {
+    Small = 'small',
+    Medium = 'medium',
+    Large = 'large'
 }
 
-// these become values, like 0, 1, 2
-// for ex "Small" becomes a property with the value of 0
+let selected: Sizes = Sizes.Small;
 
-console.log(Sizes.Medium); // this gives us the number 1. kinda works like the indexes of an array -> reverse mapping
-
-console.log(Sizes.Large, Sizes[Sizes.Large]); // gives 2 and "Large"
-
-
-// what if we want to add another to the enum
-// we have to give and "index" or "value" to the newcomer
-enum Sizes {
-    ExtraLarge = 3
+function updateSize(size: Sizes): void {
+    selected = size;
 }
 
-const selectedSize = 2;
+updateSize(Sizes.Large);
 
-console.log(Sizes[selectedSize]);
-
-
+console.log(selected);
