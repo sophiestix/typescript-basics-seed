@@ -649,3 +649,41 @@ function getNameFromJSON(obj: string) {
 getNameFromJSON(serialized);
 ```
 
+## Exploring Enums
+
+### Numeric Enums and Reverse Mappings
+
+By default we get numeric values from enums.
+```
+enum Sizes {
+    Small,      // Sizes[Sizes["Small"] = 0] = "Small";
+    Medium,     // Sizes[Sizes["Medium"] = 1] = "Medium";
+    Large       // Sizes[Sizes["Large"] = 2] = "Large";
+}
+```
+
+These become values, like 0, 1, 2; e.g. "Small" becomes a property with the value of 0
+
+We can access the numbers or values, but also the properties of the enum:
+```
+console.log(Sizes.Medium); // this gives us the number 1. kinda works like the indexes of an array -> reverse mapping
+
+console.log(Sizes.Large, Sizes[Sizes.Large]); // gives 2 and "Large"
+```
+
+What if we want to add another to the enum? we have to give and "index" or "value" to the newcomer
+```
+enum Sizes {
+    ExtraLarge = 3
+}
+```
+Later if we want to use it in app, and we have the index/number of the thing we want to return, we can pass it in and get the property or value accordingly:
+```
+const selectedSize = 2;
+console.log(Sizes[selectedSize]);
+```
+
+
+
+
+

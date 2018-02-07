@@ -1,35 +1,27 @@
-type Pizza = { name: string, toppings: number };
+// by default we get numeric values from enums
 
-const pizza: Pizza = { name: 'BLazing Inferno', toppings: 5 };
-
-// pass this object into a json string then pass it back into a JS object
-// tell TS when we convert this string back into a JS object, that it will indeed be a Pizza object
-
-const serialized = JSON.stringify(pizza);
-
-// in this case the parse is using the type :any, and the autocomplete doesn't offer name and toppings
-// when typing after the .
-
-// function getNameFromJSON(obj: string): Pizza {
-//     return JSON.parse(obj).name;
-// }
-
-// getNameFromJSON(serialized);
-
-// ----- Solutions:
-// old way of doing things, but this can be confused with JSX
-
-// function getNameFromJSON(obj: string) {
-//     return (<Pizza>JSON.parse(obj)).name;
-// }
-
-// getNameFromJSON(serialized);
-
-
-// preferred way of doing it:
-
-function getNameFromJSON(obj: string) {
-    return (JSON.parse(obj) as Pizza ).name;
+enum Sizes {
+    Small,      // Sizes[Sizes["Small"] = 0] = "Small";
+    Medium,     // Sizes[Sizes["Medium"] = 1] = "Medium";
+    Large       // Sizes[Sizes["Large"] = 2] = "Large";
 }
 
-getNameFromJSON(serialized);
+// these become values, like 0, 1, 2
+// for ex "Small" becomes a property with the value of 0
+
+console.log(Sizes.Medium); // this gives us the number 1. kinda works like the indexes of an array -> reverse mapping
+
+console.log(Sizes.Large, Sizes[Sizes.Large]); // gives 2 and "Large"
+
+
+// what if we want to add another to the enum
+// we have to give and "index" or "value" to the newcomer
+enum Sizes {
+    ExtraLarge = 3
+}
+
+const selectedSize = 2;
+
+console.log(Sizes[selectedSize]);
+
+
