@@ -519,4 +519,22 @@ const sum = sumOrder(25);
 console.log(`Total sum: ${sum}`);
 ```
 
+### Typed Functions and Default Params
+
+The above example with the `?` added in the arguments actually throws an error on the `y` in the `sumOrder` function, because it thinks it has an undefined type.
+
+What we can do is, is to give a default number `1` to the `y` when passing it into the function, to keep its number type. This means that 25 will be simply multiplied by 1 when not passing a second argument.
+```
+let sumOrder: (price: number, quantity?: number) => number;
+
+sumOrder = (x, y = 1) => {
+    return x * y;
+};
+
+const sum = sumOrder(25);
+
+console.log(`Total sum: ${sum}`);
+```
+
+
 

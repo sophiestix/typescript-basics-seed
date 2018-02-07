@@ -1,19 +1,8 @@
-// let sumOrder: (price: number, quantity: number) => number;
-
-// sumOrder = (x, y) => {
-//     if (y) {
-//         return x * y;
-//     }
-//     return x;
-// };
-
-// const sum = sumOrder(25, 2);
-
-// console.log(`Total sum: ${sum}`);
-
 let sumOrder: (price: number, quantity?: number) => number;
 
-sumOrder = (x, y) => x * y;
+sumOrder = (x, y = 1) => {
+    return x * y;
+};
 
 const sum = sumOrder(25);
 
