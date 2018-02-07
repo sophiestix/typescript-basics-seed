@@ -577,4 +577,14 @@ let toppings: Array<string>; //generic types
 toppings = ['pepperoni', 'tomato', 'bacon'];
 ```
 
+### Tuple Types for Arrays
+
+Tuple type allow us to suggest to Typescript that we have some kind of data structure inside of an array that's made up of different types.
+Only use this when we are absolutely sure how the object/datastructure will look like.
+```
+let pizza: [string, number, boolean];
+pizza = ['Pepperoni', 20, true];
+```
+
+
 
