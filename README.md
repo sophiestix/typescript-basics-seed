@@ -506,5 +506,17 @@ const sum = sumOrder(25, 2);
 console.log(`Total sum: ${sum}`);
 ```
 
+### Functions and Optional Arguments
+
+What if we want to pass only one argument, but 2 was defined earlier?
+```
+et sumOrder: (price: number, quantity?: number) => number;
+
+sumOrder = (x, y) => x * y;
+
+const sum = sumOrder(25);
+
+console.log(`Total sum: ${sum}`);
+```
 
 
