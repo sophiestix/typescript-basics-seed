@@ -1,12 +1,11 @@
-let coupon: string | null = 'pizza25';
+let PizzaSize: string = 'small';
 
-function removeCoupon(): void {
-    coupon = null;
+function selectSize(size: 'small' | 'medium' | 'large'): void {
+    PizzaSize = size;
 }
 
-console.log(coupon);
+selectSize('meduim'); // it will underline it when misspelled or not matching the de suggestions above
 
-removeCoupon();
+selectSize('medium');
 
-console.log(coupon);
-
+console.log(`Pizza size: ${PizzaSize}`);

@@ -471,5 +471,21 @@ Other workaround can be to use the `|` to add it to the type:
 let coupon: string | null = 'pizza25';
 ```
 
+### Union and Literal Types
 
+```
+let PizzaSize: string = 'small';
+
+function selectSize(size: 'small' | 'medium' | 'large'): void {
+    PizzaSize = size;
+}
+
+selectSize('meduim'); // it will underline it when misspelled or not matching the de suggestions above
+
+selectSize('medium');
+
+console.log(`Pizza size: ${PizzaSize}`);
+```
+
+Works with strings, numbers, booleans... etc.
 
