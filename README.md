@@ -536,5 +536,20 @@ const sum = sumOrder(25);
 console.log(`Total sum: ${sum}`);
 ```
 
+### Object Types
+
+What if we want to define how our object looks like up front?
+Define what properties are available for an object.
+```
+let pizza: {name: string; price: number; getName(): string} = {
+    name: 'Plain Old Pepperoni',
+    price: 20,
+    getName() {
+        return pizza.name;
+    }
+};
+
+console.log(pizza.getName());
+```
 
 
