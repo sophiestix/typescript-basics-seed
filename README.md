@@ -586,5 +586,47 @@ let pizza: [string, number, boolean];
 pizza = ['Pepperoni', 20, true];
 ```
 
+## Type Aliases and Assertions
+
+### Type Aliases
+
+Basic example with seemingly lot of repetitions:
+```
+let PizzaSize: 'small' | 'medium' | 'large' = 'small';
+
+const selectSize = (size: 'small' | 'medium' | 'large') => {
+    PizzaSize = size;
+};
+
+selectSize('small');
+```
+
+But this is very repetiticve, so:
+```
+type Size = 'small' | 'medium' | 'large'; // you can export it and use it in other files too
+type Callback = (size: Size) => void;
+
+let PizzaSize: Size = 'small';
+
+const selectSize = (size: Size) => {
+    PizzaSize = size;
+};
+
+selectSize('medium');
+```
+
+Even one more thing to make it more simpler:
+```
+type Size = 'small' | 'medium' | 'large';
+type Callback = (size: Size) => void;
+
+let PizzaSize: Size = 'small';
+
+const selectSize: Callback = (x) => {
+    PizzaSize = x;
+};
+
+selectSize('medium');
+```
 
 
