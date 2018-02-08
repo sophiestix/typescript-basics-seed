@@ -789,3 +789,16 @@ interface Pizza extends Sizes {
     getAvailableSize(): string[];
 };
 ```
+
+### Interfaces and Optional Properties
+
+For example, we want to include a new property sometime along the way, but we are not sure yet. We can
+make that property in the interface optional, with the help of an `?` after the name.
+
+```
+interface Pizza extends Sizes {
+    name: string;
+    toppings?: number;
+    getAvailableSize(): string[];
+};
+```
