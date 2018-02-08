@@ -802,3 +802,29 @@ interface Pizza extends Sizes {
     getAvailableSize(): string[];
 };
 ```
+
+### Interfaces with Index Signatures
+
+Treating the datastructure as a dictionary.
+
+```
+interface Pizza extends Sizes {
+    name: string;
+    toppings?: number;
+    getAvailableSize(): string[];
+    [key: number]: string; // we have an index key, which is a number that will hold a string for an ID
+};
+
+pizza = createPizza('Pepperoni', ['small', 'medium']);
+pizza[1] = 'xyz';
+```
+
+If a server return a unique ID as a string, you can use: `[key: string]: any;` , though it can be risky and prone to problems.
+
+Another way to use it, it we want to extend the properties with more dynamic values later:
+```
+dictionary: {
+    [key: string]: any;
+}
+```
+
