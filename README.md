@@ -777,3 +777,15 @@ function createPizza(name: string, sizes: string[]): Pizza {
 pizza = createPizza('Pepperoni', ['small', 'medium']);
 ```
 
+### Extending Interfaces
+
+```
+interface Sizes {
+    sizes: string[];
+}
+
+interface Pizza extends Sizes {
+    name: string;
+    getAvailableSize(): string[];
+};
+```
