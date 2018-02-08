@@ -732,3 +732,48 @@ function createPizza(name: string, sizes: string[]): Pizza {
 pizza = createPizza('Pepperoni', ['small', 'medium']);
 ```
 
+### Interfaces with Function Types
+
+We can either declare that we are returning a Pizza type/interface here:
+```
+function createPizza(name: string, sizes: string[]): Pizza {
+    return {
+        // logic
+    }
+}
+```
+
+or
+
+``` 
+function createPizza(name: string, sizes: string[]) {
+    return {
+        // logic
+    } as Pizza;
+}
+```
+
+See example:
+
+```
+interface Pizza {
+    name: string;
+    sizes: string[];
+    getAvailableSize(): string[];
+};
+
+let pizza: Pizza;
+
+function createPizza(name: string, sizes: string[]): Pizza {
+    return {
+        name,
+        sizes,
+        getAvailableSize() {
+            return this.sizes;
+        }
+    }
+}
+
+pizza = createPizza('Pepperoni', ['small', 'medium']);
+```
+
