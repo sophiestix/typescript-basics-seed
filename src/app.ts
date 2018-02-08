@@ -1,35 +1,20 @@
-// enum Sizes {
-//     Small = 'small',    // Sizes["Small"] = "small"; => simple JS key=value pair
-//     Medium = 'medium',
-//     Large = 'large'
-// }
+// type Pizza = {
+//     name: string;
+//     sizes: string[]
+// };
 
-// let selected: Sizes = Sizes.Small;
+interface Pizza {
+    name: string;
+    sizes: string[]
+};
 
-// function updateSize(size: Sizes): void {
-//     selected = size;
-// }
+let pizza: Pizza;
 
-// updateSize(Sizes.Large);
-
-// console.log(selected);
-
-
-// Inline Member => by adding "const" in front, we will just get the inline values, makes the compiled
-// JS shorter and neater -> inlining the enum members
-
-const enum Sizes {
-    Small = 'small',
-    Medium = 'medium',
-    Large = 'large'
+function createPizza(name: string, sizes: string[]): Pizza {
+    return {
+        name,
+        sizes,
+    }
 }
 
-let selected: Sizes = Sizes.Small;
-
-function updateSize(size: Sizes): void {
-    selected = size;
-}
-
-updateSize(Sizes.Large);
-
-console.log(selected);
+pizza = createPizza('Pepperoni', ['small', 'medium']);
