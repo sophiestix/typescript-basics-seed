@@ -1,29 +1,29 @@
-interface Sizes {
-    sizes: string[];
-}
-
-interface Pizza extends Sizes {
+class Pizza {
     name: string;
-    toppings?: number;
-    getAvailableSize(): string[];
-    [key: number]: string; // we have an index key, which is a number that will hold a string for an ID
-    // dictionary: {
-    //     [key: string]: any;
-    // }
-};
+    toppings: string[] = []; // after declaring it, default it to an empty array immediately
 
-let pizza: Pizza;
-
-function createPizza(name: string, sizes: string[]): Pizza {
-    return {
-        name,
-        sizes,
-        getAvailableSize() {
-            return this.sizes;
-        }
+    constructor(name: string) {
+        this.name = name;
     }
+
+    addTopping(topping: string) {
+        this.toppings.push(topping);
+    }
+
+    removeTopping() {}
 }
 
-pizza = createPizza('Pepperoni', ['small', 'medium']);
-pizza[1] = 'xyz';
-pizza.toppings = 1;
+// function Pizza(name: string) {
+//     this.name = name;
+//     this.toppings = [];
+// }
+
+// Pizza.prototype.addTopping = function addTopping(topping: string) {
+//     this.toppings.push(topping);
+// };
+
+const pizza = new Pizza('Pepperoni');
+
+pizza.addTopping('pepperoni');
+
+console.log(pizza);
