@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
     constructor(public sizes: string[]) {}
 
     set availableSizes(sizes: string[]) {

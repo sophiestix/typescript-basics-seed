@@ -1007,3 +1007,24 @@ class Pizza extends Sizes {
 const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 ```
 
+### Abstract Classes
+
+What happens if we create a new instance of `Sizes` by any chance and break things? We can make the
+original `Sizes` into an abstract class, meaning it will be only used for extending from it further
+down in our application. We don't want to invoke that class on its own.
+
+```
+abstract class Sizes {
+    constructor(public sizes: string[]) {}
+
+    set availableSizes(sizes: string[]) {
+        this.sizes = sizes;
+    }
+
+    get availableSizes () {
+        return this.sizes;
+    }
+}
+```
+
+
