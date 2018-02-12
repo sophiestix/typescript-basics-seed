@@ -946,5 +946,42 @@ console.log(pizza.name);
 `Readonly` can be only initialized at the declaration! When we declare the property at the top, or
 when we declare it inside the `constructor()`.
 
+### Setters and Getters (Accessors)
+
+Internal workings on how a property internally set.
+They are always `public`.
+
+Setting the value of a property:
+```
+element.className = 'abc';
+```
+
+Getter:
+```
+console.log(element.className);
+```
+
+```
+class Sizes {
+    constructor(public sizes: string[]) {}
+
+    set availableSizes(sizes: string[]) {
+        this.sizes = sizes;
+    }
+
+    get availableSizes () {
+        return this.sizes;
+    }
+}
+
+const sizes = new Sizes(['small', 'medium']);
+
+// invoke getter
+console.log(sizes.availableSizes); // ["small", "medium"]
+// invoke setter
+sizes.availableSizes = ['medium', 'large'];
+
+console.log(sizes.availableSizes); //["medium", "large"]
+```
 
 
