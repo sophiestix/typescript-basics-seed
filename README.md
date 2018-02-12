@@ -1130,3 +1130,34 @@ class Coupon {
 
 console.log(Coupon.create(25)); // PIZZA_RESTAURANT_25
 ```
+
+## Generics and Overloads
+
+### Function Generics
+
+We create some form of dynamic type.
+Common example when we have a list, where we want to add items to the list and also retreive items from it.
+```
+class Pizza {
+    constructor(private name: string, private price: number) {}
+}
+
+class List<T> { // T is a placeholder for a dynamic type
+    private list: T[]; // allow us to pass type information between members
+
+    addItem(item: T): void {
+        this.list.push(item);
+    }
+
+    getList(): T[]{
+        return this.list;
+    }
+}
+
+const list = new List<Pizza>(); // supply the type when we call it
+list.addItem(new Pizza('Pepperoni', 15));
+```
+
+
+"Defined any type" => when we start to use some kind of API, we will define the type at the point of call.
+We don't just pass in any type, but rather something predefined.
