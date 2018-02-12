@@ -1096,3 +1096,37 @@ class Pizza extends Sizes implements PizzaInterface {
 }
 ```
 
+### Static Properties and Methods
+
+Instance method:
+```
+const date = +new Date();
+console.log(date); // 1518446890284 - it's a timestamp
+```
+
+Static method, when we don't create a new instance:
+```
+const date = Date.now();
+console.log(date);
+```
+
+Like here, we don't need to create a new instance and call it: `new Coupon();` - we can just access
+the `allowed` after a `.`:
+```
+class Coupon {
+    static allowed = ['Pepperoni', 'Blazing Inferno'];
+}
+
+console.log(Coupon.allowed);
+```
+
+It is great for utility-type functions, e.g. prefixing things:
+```
+class Coupon {
+    static create(percentage: number) {
+        return `PIZZA_RESTAURANT_${percentage}`;
+    }
+}
+
+console.log(Coupon.create(25)); // PIZZA_RESTAURANT_25
+```
