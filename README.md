@@ -1161,3 +1161,35 @@ list.addItem(new Pizza('Pepperoni', 15));
 
 "Defined any type" => when we start to use some kind of API, we will define the type at the point of call.
 We don't just pass in any type, but rather something predefined.
+
+### Function Overloads
+
+Allows us to declare diff ways we could potentially use a function. Now the function may return different
+types of objects based on the parameters that we supply to the function.
+
+Function overload allows us to declare the diff types we pass in and the return types
+The declarations won't get compiled into JS, just the main function.
+
+```
+function reverse(str: string): string;
+function reverse(arr: any[]): any[];
+function reverse(stringOrArray: string | any[]): string | any[] {
+    // conditional check to see what we pass in
+    if (typeof stringOrArray === 'string') {
+        return stringOrArray
+            .split('')
+            .reverse()
+            .join();
+    }
+    return stringOrArray.slice().reverse(); // we are creating a brand new copy of the passed-in function before slicing
+}
+
+reverse('Pepperoni');
+reverse(['bacon', 'pepperoni', 'chili', 'mushrooms']);
+```
+
+Adding some Generics into the mix:
+```
+function reverse<T>(arr: T[]): T[];
+```
+
