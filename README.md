@@ -868,3 +868,68 @@ const pizza = new Pizza('Pepperoni');
 pizza.addTopping('pepperoni');
 console.log(pizza);
 ```
+
+### Public and Private Members
+
+Private: internally to a function or a class
+Public: you can access it from outside too
+
+```
+class Pizza {
+    name: string;
+    toppings: string[] = [];
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    private addTopping(topping: string) {
+        this.toppings.push(topping);
+    }
+}
+const pizza = new Pizza('Pepperoni');
+
+pizza.addTopping('pepperoni'); // now private is not available here
+
+console.log(pizza);
+```
+
+So to have this:
+```
+class Pizza {
+    public toppings: string[] = [];
+
+    constructor(private name: string) {}
+
+    public addTopping(topping: string) {
+        this.toppings.push(topping);
+    }
+
+    removeTopping() {}
+}
+
+const pizza = new Pizza('Pepperoni');
+
+pizza.addTopping('pepperoni');
+
+console.log(pizza);
+```
+will result in this:
+```
+var Pizza = /** @class */ (function () {
+    function Pizza(name) {
+        this.name = name;
+        this.toppings = [];
+    }
+    Pizza.prototype.addTopping = function (topping) {
+        this.toppings.push(topping);
+    };
+    Pizza.prototype.removeTopping = function () { };
+    return Pizza;
+}());
+var pizza = new Pizza('Pepperoni');
+pizza.addTopping('pepperoni');
+console.log(pizza);
+```
+
+`public` and `private` are optional, by default it is `public`. 
