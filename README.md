@@ -932,4 +932,19 @@ pizza.addTopping('pepperoni');
 console.log(pizza);
 ```
 
-`public` and `private` are optional, by default it is `public`. 
+`public` and `private` are optional, by default it is `public`.
+
+### Readonly Members
+
+It doesn't affect the compiled JS file, jsut like the private and public members.
+``` 
+constructor(readonly name: string) {}
+
+console.log(pizza.name);
+```
+
+`Readonly` can be only initialized at the declaration! When we declare the property at the top, or
+when we declare it inside the `constructor()`.
+
+
+
