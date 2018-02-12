@@ -1027,4 +1027,24 @@ abstract class Sizes {
 }
 ```
 
+### Protected Members and Inheritence
+
+Esentially we inherited the ability to access private members when we extend a class.
+```
+abstract class Sizes {
+    constructor(protected sizes: string[]) {}
+}
+
+class Pizza extends Sizes {
+    public updateSizes(sizes: string[]) {
+        this.sizes = sizes;
+    }
+}
+
+const pizza = new Pizza('Pepperoni', ['small', 'medium']);
+console.log(pizza.availableSizes); // ["small", "medium"]
+
+pizza.updateSizes(['large']);
+console.log(pizza.availableSizes); // ["large"]
+```
 
