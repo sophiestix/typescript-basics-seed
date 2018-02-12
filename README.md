@@ -984,4 +984,26 @@ sizes.availableSizes = ['medium', 'large'];
 console.log(sizes.availableSizes); //["medium", "large"]
 ```
 
+### Class Inheritence"
+
+We are extended our `Pizza` class with the `Sizes` class. So any time we are creating a new instance
+of Pizza, we are also extending our instance of the Sizes.
+
+```
+class Pizza extends Sizes {
+    public toppings: string[] = [];
+
+    constructor(readonly name: string, public sizes: string[]) {
+        super(sizes); // need to supply the available sizes here
+    }
+
+    public addTopping(topping: string) {
+        this.toppings.push(topping);
+    }
+
+    removeTopping() {}
+}
+
+const pizza = new Pizza('Pepperoni', ['small', 'medium']);
+```
 
