@@ -1027,7 +1027,7 @@ abstract class Sizes {
 }
 ```
 
-### Protected Members and Inheritence
+### Protected Members and Inheritance
 
 Esentially we inherited the ability to access private members when we extend a class.
 ```
@@ -1046,5 +1046,53 @@ console.log(pizza.availableSizes); // ["small", "medium"]
 
 pizza.updateSizes(['large']);
 console.log(pizza.availableSizes); // ["large"]
+```
+
+### Interface contracts with "implements"
+
+When we have a setter and a getter, we can describe the property is available
+and what it returns it's a string in an `interface`.
+
+When implementing interfaces, the properties in the class should be public. Private or public members
+cannot be added to the interface.
+
+It could be an extra to check that we use the correct types in our application code.
+
+```
+interface SizesInterface {
+    availableSizes: string[];
+}
+
+abstract class Sizes implements SizesInterface {
+    constructor(protected sizes: string[]) {}
+
+    set availableSizes(sizes: string[]) {
+        this.sizes = sizes;
+    }
+
+    get availableSizes () {
+        return this.sizes;
+    }
+}
+
+interface PizzaInterface extends SizesInterface {
+    readonly name: string;
+    toppings: string[];
+    updateSizes(sizes: string[]): void;
+    addTopping(topping: string): void;
+}
+class Pizza extends Sizes implements PizzaInterface {
+    public toppings: string[] = [];
+
+    constructor(readonly name: string, sizes: string[]) {
+        super(sizes); // need to supply the available sizes here
+    }
+
+    public updateSizes(sizes: string[]) {
+        this.sizes = sizes; // inherited and extended from the Sizes class
+    }
+
+    // etc code here
+}
 ```
 
