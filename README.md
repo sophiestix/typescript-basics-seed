@@ -3,9 +3,11 @@
 TypeScript: Basics Course
 </h1>
 
-<p align="center">
-    This repo serves as a place for my notes on the Ultimate Angular's TypeScript Basics course. You can learn TypeScript with Todd Motto [here](https://ultimateangular.com/courses/). Try it out, it's a great course!
-</p>
+<div align="center">
+    <p>This repo serves as a place for my notes on the Ultimate Angular's TypeScript Basics course. You can learn TypeScript with Todd Motto </p>
+    <a href="https://ultimateangular.com/courses/">here</a>
+    <p>. Try it out, it's a great course!</p>
+</div>
 
 ---
 <div align="center">
