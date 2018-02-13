@@ -12,6 +12,7 @@
 
 ## Introduction
 ### Installing Typescript / TypeScript compiler (tsc) and tsconfig
+(ab1f3f599d3b84c2f9e1b877e63fff9416283356)
 
 ```
 tsc -version
