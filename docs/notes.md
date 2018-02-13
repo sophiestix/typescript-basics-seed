@@ -1,7 +1,7 @@
 # Notes
 
 * [Introduction](#introduction)
-* [ES6/7 and TypeScript](#es6-7-and-typescript)
+* [ES6/7 and TypeScript](#es67-and-typescript)
 * [Primitive Types](#primitive-types)
 * [Special Types](#special-types)
 * [Type Aliases and Assertions](#type-aliases-and-assertions)
