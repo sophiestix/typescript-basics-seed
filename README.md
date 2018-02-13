@@ -8,13 +8,13 @@ TypeScript: Basics Course
 
 
 ---
-<p align="center">
-    [Setup and install](docs/setup.md) | [Notes](docs/notes.md) | [Resources](docs/resources.md)
-</p>
+<div align="center">
+    <h4>
+        <a href="docs/setup.md">Setup and install</a> |
+        <a href="docs/notes.md">Notes</a> |
+        <a href="docs/resources.md">Resources</a>
+    </h4>
+</div>
 ---
-
-
-
-
 
 
