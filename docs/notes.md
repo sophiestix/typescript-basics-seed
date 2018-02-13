@@ -1,13 +1,13 @@
 # Notes
 
 * [Introduction](#introduction)
-* [ES6/7 and TypeScript](#es6/7-and-typescript)
+* [ES6/7 and TypeScript](#es6-7-and-typescript)
 * [Primitive Types](#primitive-types)
 * [Special Types](#special-types)
 * [Type Aliases and Assertions](#type-aliases-and-assertions)
 * [Exploring Enums](#exploring-enums)
 * [Diving into Interface](#diving-into-interfaces)
-* [Classes, Properties and Inheritance](#classes,-properties-and-inheritance)
+* [Classes, Properties and Inheritance](#classes-properties-and-inheritance)
 * [Generics and Overload](#generics-and-overloads)
 
 ## Introduction
