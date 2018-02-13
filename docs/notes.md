@@ -12,7 +12,7 @@
 
 ## Introduction
 ### Installing Typescript / TypeScript compiler (tsc) and tsconfig
-(ab1f3f599d3b84c2f9e1b877e63fff9416283356)
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/ab1f3f599d3b84c2f9e1b877e63fff9416283356)
 
 ```
 tsc -version
@@ -45,6 +45,7 @@ tsc -w
 ```
 
 ### Setting up Webpack for TypeScript
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/b999255b4630c67641fe10a68222e817cd33b53f)
 
 Create a `webpack.config.js` file.
 
@@ -63,6 +64,7 @@ in the `<script>` tag in `index.html` anymore.
 ## ES6/7 and TypeScript
 
 ### Arrow functions and implicit returns
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/aca41d36c2ae1174b089a016b8aa91d835d6a729)
 
 ```
 const pizza3 = {
@@ -87,6 +89,7 @@ console.log(pizza4.getName());
 ```
 
 ### Default function parameters
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/9ece7ddb57821e5474fa2470b81f9de254dde569)
 
 ```
 function multiply(a, b) {
@@ -109,6 +112,7 @@ console.log(multiply2(5, 35));
 ```
 
 ### Object literal improvements
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/4626ed5a05aa008f5a3c6a78d54943d49afbac4d)
 
 Turn the classic
 ```
@@ -152,6 +156,7 @@ console.log(createOrder(pizza, toppings));
 ```
 
 ### Rest Parameters
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/0edf9b155d614b58ed9227d71aa3f21534ab0e63)
 
 What if we have an indefinite amount of arguments
 ```
@@ -166,6 +171,7 @@ console.log(sum2);
 ```
 
 ### Array and Object Spreads
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a27490222bcc501376eb52fd68adbcb4221f1aa5)
 
 ```
 const toppings = ['bacon', 'chili'];
@@ -194,6 +200,7 @@ zsofias-mbp:typescript-basics-seed zsofiahelmeczi$ node dist/app.js
 ```
 
 ### Destructuring Objects
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/352c5ad91acfda809e10b4ea6cd93a1241355334)
 
 To pluck out things from objects we don't need
 
@@ -268,6 +275,7 @@ logToppings(toppings);
 ## Primitive Types
 
 ### Number Type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/eb404556bc8eafcedbb1d1c362e8ff3794b1b746)
 
 Don't mistake it with the uppercase javascript types like `new Number();`.
 
@@ -295,6 +303,7 @@ console.log(`Pizza costs: ${cost}`);
 ```
 
 ### String Type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/45127b452b3866483c8d5069911500020352857b)
 
 ```
 const coupon: string = 'pizza25';
@@ -311,6 +320,7 @@ console.log(couponMessage);
 ```
 
 ### Boolean type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/3681650ca4c0487468980783e83553dbf7348624)
 
 ```
 const pizzas: number = 5;
@@ -329,6 +339,7 @@ if (offerDiscount(pizzas)) {
 ## Special Types
 
 ### Any Type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/572b4695eeaebe45dac01a1ccc4aeecc43199ff4)
 
 If we don't supply a type for a variable, it will turn to `any` by default. It won't change even if we assign a number to the variable, like here:
 
@@ -342,6 +353,7 @@ One reason to use they any type is e.g. when you migrate an old javascript appli
 and don't want to dive into the very details yet.
 
 ### Implicit vs Explicit Types
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/4f3541b0e26f9e041b62bf320acf1e1251e95fde)
 
 The diff is whether we let typescript to assume a type or excplicitly state the type upfront.
 ```
@@ -350,6 +362,7 @@ let explicitCoupon: string = 'pizza25';
 ```
 
 ### Void Type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a4fa6d74267c549352734a231bb7f82a0121ec87)
 
 Kinda the opposite of `any`, it is great for functions. In cases when the function for ex doesn't return
 anything, but rather will be reused later.
@@ -367,6 +380,7 @@ console.log(selectedTopping);
 ```
 
 ### Never Type
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/891f33d6bb198043ff7017e9989fb1d766c6c77b)
 
 Telling the tsc that the value will never occure. When the return type never actually returns something
 or for ex an error will be thrown, which means that we will never continue down with that particular code.
@@ -381,6 +395,7 @@ orderError('Something went wrong');
 ```
 
 ### Null, Undefined, Strick Null checks
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/06b48f3009247e9bea5a1440bf1ef24aea4331a1)
 
 In the `tsconfig.json` file, you can override the `strict: true` with `strictNullCheck: true` to be able to reassign `null` in to a for ex `:string` type variable:
 ```
@@ -401,6 +416,7 @@ let coupon: string | null = 'pizza25';
 ```
 
 ### Union and Literal Types
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/251ca65dad1071f14c80a3fc722292ab0e431123)
 
 ```
 let PizzaSize: string = 'small';
@@ -419,6 +435,7 @@ console.log(`Pizza size: ${PizzaSize}`);
 Works with strings, numbers, booleans... etc.
 
 ### Function Types
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/b23746ec609e4075521d83b4b941204f7927e790)
 
 ```
 let sumOrder: Function;
@@ -436,6 +453,7 @@ console.log(`Total sum: ${sum}`);
 ```
 
 ### Functions and Optional Arguments
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/20f557043f1db4fa8cf8238f04941dfa35b95cbf)
 
 What if we want to pass only one argument, but 2 was defined earlier?
 ```
@@ -449,6 +467,7 @@ console.log(`Total sum: ${sum}`);
 ```
 
 ### Typed Functions and Default Params
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/0e35c71d938d587c20a55754384b4b17ae394d9e)
 
 The above example with the `?` added in the arguments actually throws an error on the `y` in the `sumOrder` function, because it thinks it has an undefined type.
 
@@ -466,6 +485,7 @@ console.log(`Total sum: ${sum}`);
 ```
 
 ### Object Types
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/4ef608855b77d6aa29713e5333c36757821ba00f)
 
 What if we want to define how our object looks like up front?
 Define what properties are available for an object.
@@ -482,6 +502,7 @@ console.log(pizza.getName());
 ```
 
 ### Array Types and Generics
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a272972c5e664601d61c8c43f0c07692c6bf78f7)
 
 Implied string array
 ```
@@ -507,6 +528,7 @@ toppings = ['pepperoni', 'tomato', 'bacon'];
 ```
 
 ### Tuple Types for Arrays
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a3d83fcaf1d944836a11f60fc2fcb3376685def1)
 
 Tuple type allow us to suggest to Typescript that we have some kind of data structure inside of an array that's made up of different types.
 Only use this when we are absolutely sure how the object/datastructure will look like.
@@ -518,6 +540,7 @@ pizza = ['Pepperoni', 20, true];
 ## Type Aliases and Assertions
 
 ### Type Aliases
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/aac3a266fd9cb55142e0f0d053814fac1d2a759c)
 
 Basic example with seemingly lot of repetitions:
 ```
@@ -559,6 +582,7 @@ selectSize('medium');
 ```
 
 ### Type Assertions
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/38a2303f0f46ff8d4785dc6f0dc7b5973643aa43)
 
 We instruct TS about that we know more about the types that would potentially would be coming back from a dataset or function call.
 
@@ -581,6 +605,7 @@ getNameFromJSON(serialized);
 ## Exploring Enums
 
 ### Numeric Enums and Reverse Mappings
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a54da6b07d9e0b279341ce1804f499fae8766887)
 
 By default we get numeric values from enums.
 ```
@@ -612,7 +637,8 @@ const selectedSize = 2;
 console.log(Sizes[selectedSize]);
 ```
 
-## String Enums and Inlining Members
+### String Enums and Inlining Members
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/7456cbb3cfc420347982cc02272be789d07e1856)
 
 Inline Member => by adding "const" in front, we will just get the inline values, makes the compiled
 JS shorter and neater -> inlining the enum members
@@ -638,6 +664,8 @@ console.log(selected);
 ## Diving into Interfaces
 
 ### Creating Interfaces
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/ba0973a45dc58f045ebadffcef92a0d61895e592)
+
 ```
 // type Pizza = {
 //     name: string;
@@ -662,6 +690,7 @@ pizza = createPizza('Pepperoni', ['small', 'medium']);
 ```
 
 ### Interfaces with Function Types
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/4dde2d1c68efb8fa4231a82ad69793b2bccf1f8c)
 
 We can either declare that we are returning a Pizza type/interface here:
 ```
@@ -707,6 +736,7 @@ pizza = createPizza('Pepperoni', ['small', 'medium']);
 ```
 
 ### Extending Interfaces
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/fe889ec5e0c8c989fd1d1487b2660ae03907d5b2)
 
 ```
 interface Sizes {
@@ -720,6 +750,7 @@ interface Pizza extends Sizes {
 ```
 
 ### Interfaces and Optional Properties
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/6f7d4b472780857ab82133b61fe748008df243e5)
 
 For example, we want to include a new property sometime along the way, but we are not sure yet. We can
 make that property in the interface optional, with the help of an `?` after the name.
@@ -733,6 +764,7 @@ interface Pizza extends Sizes {
 ```
 
 ### Interfaces with Index Signatures
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/b7ed2058b4687033d9c92368e2fb0990827bac0c)
 
 Treating the datastructure as a dictionary.
 
@@ -760,6 +792,7 @@ dictionary: {
 ## Classes, Properties and Inheritance
 
 ### Understanding Classes and Constructor
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/b9b86f6274527181f5d34a1dffc92c9799b0bbd4)
 
 The old way of doing things:
 ```
@@ -799,6 +832,7 @@ console.log(pizza);
 ```
 
 ### Public and Private Members
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/201a19b71dc570389455fb7d01f8d474bb78038b)
 
 Private: internally to a function or a class
 Public: you can access it from outside too
@@ -864,6 +898,7 @@ console.log(pizza);
 `public` and `private` are optional, by default it is `public`.
 
 ### Readonly Members
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/1c5bbc413f68d6c0ac575b941a0c62103ad181ed)
 
 It doesn't affect the compiled JS file, jsut like the private and public members.
 ``` 
@@ -876,6 +911,7 @@ console.log(pizza.name);
 when we declare it inside the `constructor()`.
 
 ### Setters and Getters (Accessors)
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/a4d1012d7dc785018864d5a7f63a756f83c7722e)
 
 Internal workings on how a property internally set.
 They are always `public`.
@@ -913,7 +949,8 @@ sizes.availableSizes = ['medium', 'large'];
 console.log(sizes.availableSizes); //["medium", "large"]
 ```
 
-### Class Inheritence"
+### Class Inheritance
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/b5fe48e4a6b49ae0590320ec30a32bb20a0e321a)
 
 We are extended our `Pizza` class with the `Sizes` class. So any time we are creating a new instance
 of Pizza, we are also extending our instance of the Sizes.
@@ -937,6 +974,7 @@ const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 ```
 
 ### Abstract Classes
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/3282a09b518830c3f9f55c7c99607f76a0e14eb1)
 
 What happens if we create a new instance of `Sizes` by any chance and break things? We can make the
 original `Sizes` into an abstract class, meaning it will be only used for extending from it further
@@ -957,6 +995,7 @@ abstract class Sizes {
 ```
 
 ### Protected Members and Inheritance
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/8b14e8ee842c2194268695f9086c02125e610b9c)
 
 Esentially we inherited the ability to access private members when we extend a class.
 ```
@@ -978,6 +1017,7 @@ console.log(pizza.availableSizes); // ["large"]
 ```
 
 ### Interface contracts with "implements"
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/f0bf9b1a34f170ad65972566abd8c9f27dccfcfc)
 
 When we have a setter and a getter, we can describe the property is available
 and what it returns it's a string in an `interface`.
@@ -1026,6 +1066,7 @@ class Pizza extends Sizes implements PizzaInterface {
 ```
 
 ### Static Properties and Methods
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/2091d09ba01a5737f452305d0a1907c07350e846)
 
 Instance method:
 ```
@@ -1063,6 +1104,7 @@ console.log(Coupon.create(25)); // PIZZA_RESTAURANT_25
 ## Generics and Overloads
 
 ### Function Generics
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/1b77a5bf524048334e64150bd8581fe67e76d81e)
 
 We create some form of dynamic type.
 Common example when we have a list, where we want to add items to the list and also retreive items from it.
@@ -1092,6 +1134,7 @@ list.addItem(new Pizza('Pepperoni', 15));
 We don't just pass in any type, but rather something predefined.
 
 ### Function Overloads
+[files](https://github.com/sophiestix/typescript-basics-seed/commit/0a82f584a4253a7a65607a83bb7f691564ac3847)
 
 Allows us to declare diff ways we could potentially use a function. Now the function may return different
 types of objects based on the parameters that we supply to the function.
